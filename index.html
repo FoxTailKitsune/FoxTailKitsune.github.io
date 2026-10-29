@@ -3,52 +3,82 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Joseph Wang — Supply Chain &amp; Business Analytics</title>
-<meta name="description" content="Joseph Wang, Rutgers Business School. Supply chain optimization, cost analysis, and data analytics.">
+<title>Joseph Wang | Supply Chain &amp; Business Analytics</title>
+<meta name="description" content="Joseph Wang, Rutgers Business School. Supply chain optimization, cost analysis, and data analytics. Selected projects with code.">
 <style>
   :root{
-    --bg:#0e1116; --panel:#161b22; --line:#232a35; --text:#e8ecf2; --muted:#9aa4b2;
+    --bg:#0e1116; --panel:#161b22; --panel2:#11161d; --line:#232a35; --text:#e8ecf2; --muted:#9aa4b2;
     --teal:#5abeb0; --amber:#f0b446;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--text);
-       font:16px/1.6 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+       font:16px/1.6 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
   a{color:var(--teal);text-decoration:none}
   a:hover{text-decoration:underline}
-  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
 
-  header{padding:88px 0 56px;border-bottom:1px solid var(--line)}
+  header{padding:84px 0 48px;border-bottom:1px solid var(--line)}
   .eyebrow{color:var(--amber);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
-  h1{font-size:44px;line-height:1.1;margin:0 0 18px;letter-spacing:-.02em}
-  .statement{font-size:20px;color:var(--text);max-width:640px;margin:0 0 26px}
-  .contact{display:flex;flex-wrap:wrap;gap:18px;color:var(--muted);font-size:14px}
+  h1{font-size:46px;line-height:1.05;margin:0 0 16px;letter-spacing:-.02em}
+  .statement{font-size:20px;color:var(--text);max-width:660px;margin:0 0 8px}
+  .substatement{font-size:16px;color:var(--muted);max-width:660px;margin:0 0 26px}
+  .contact{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;color:var(--muted);font-size:14px}
   .contact a{color:var(--muted)}
   .contact a:hover{color:var(--teal)}
+  .btn{display:inline-block;border:1px solid var(--teal);color:var(--teal);
+       border-radius:999px;padding:8px 16px;font-size:14px}
+  .btn:hover{background:rgba(90,190,176,.10);text-decoration:none}
 
-  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
   h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
-     margin:0 0 26px;font-weight:600}
-
-  .skills{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
-  .skills li{border:1px solid var(--line);background:var(--panel);border-radius:999px;
-             padding:7px 14px;font-size:14px;color:var(--text)}
+     margin:0 0 8px;font-weight:600}
+  .section-note{color:var(--muted);font-size:15px;margin:0 0 26px;max-width:660px}
 
   .project{background:var(--panel);border:1px solid var(--line);border-radius:14px;
-           padding:22px 22px 18px;margin:0 0 16px}
-  .project h3{margin:0 0 6px;font-size:18px}
-  .project .meta{color:var(--amber);font-size:13px;margin:0 0 10px}
-  .project p{margin:0 0 10px;color:var(--muted)}
-  .project ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
-  .project li{margin:4px 0}
-  .project .links{margin-top:12px;font-size:14px}
+           padding:22px 22px 18px;margin:0 0 16px;transition:border-color .15s}
+  .project:hover{border-color:#31404f}
+  .project-top{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
+  .project h3{margin:0;font-size:19px;letter-spacing:-.01em}
+  .project .meta{color:var(--amber);font-size:13px;margin:0;white-space:nowrap}
+  .project p{margin:10px 0 0;color:var(--muted)}
+  .project .label{display:block;color:var(--text);font-size:12px;letter-spacing:.08em;
+                  text-transform:uppercase;margin:16px 0 4px;font-weight:600}
+  .project ul{margin:2px 0 0;padding-left:18px;color:var(--muted)}
+  .project li{margin:3px 0}
+  .stack{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+  .stack li{border:1px solid var(--line);background:var(--panel2);border-radius:6px;
+            padding:3px 9px;font-size:12px;color:var(--muted);letter-spacing:.02em}
+  .links{margin-top:14px;font-size:14px;display:flex;gap:16px;flex-wrap:wrap}
+  .links .quiet{color:var(--muted)}
 
-  footer{padding:40px 0 64px;color:var(--muted);font-size:14px;display:flex;
+  .job{display:grid;grid-template-columns:150px 1fr;gap:6px 20px;padding:16px 0;border-top:1px solid var(--line)}
+  .job:first-of-type{border-top:none;padding-top:0}
+  .job .when{color:var(--muted);font-size:14px;padding-top:2px}
+  .job h3{margin:0;font-size:17px}
+  .job .org{color:var(--amber);font-size:13px;margin:2px 0 8px}
+  .job ul{margin:0;padding-left:18px;color:var(--muted)}
+  .job li{margin:3px 0}
+
+  .skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 28px;margin:0}
+  .skills h3{margin:0 0 4px;font-size:14px;color:var(--text)}
+  .skills p{margin:0;color:var(--muted);font-size:14px}
+
+  .edu h3{margin:0 0 4px;font-size:18px}
+  .edu p{margin:0;color:var(--muted)}
+  .edu .course{margin-top:12px;font-size:14px}
+
+  footer{padding:36px 0 60px;color:var(--muted);font-size:14px;display:flex;
          justify-content:space-between;gap:16px;flex-wrap:wrap}
-  @media (max-width:560px){
-    header{padding:56px 0 40px}
-    h1{font-size:34px}
+
+  @media (max-width:640px){
+    header{padding:56px 0 36px}
+    h1{font-size:36px}
     .statement{font-size:18px}
+    .job{grid-template-columns:1fr;gap:2px}
+    .job .when{padding-top:0}
+    .skills{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -56,106 +86,223 @@
 
 <header>
   <div class="wrap">
-    <p class="eyebrow">Supply Chain Management · Business Analytics &amp; IT</p>
+    <p class="eyebrow">Supply Chain Management &middot; Business Analytics &amp; IT</p>
     <h1>Joseph Wang</h1>
     <p class="statement">
-      Rutgers Business School senior who builds optimization models and data tools
-      that turn messy operations into measurable cost and time savings.
+      I build optimization models and data tools that turn messy operations into measurable
+      cost and time savings.
+    </p>
+    <p class="substatement">
+      Rutgers Business School, class of 2027. Supply chain intern at Ringpu Biology, shift
+      supervisor at HEYTEA, and the author of the projects below.
     </p>
     <div class="contact">
       <span>New Brunswick, NJ</span>
       <a href="mailto:joseph.wang4@rutgers.edu">joseph.wang4@rutgers.edu</a>
       <a href="https://www.linkedin.com/in/joseph-wang-04" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/FoxTailKitsune" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="Joseph-Wang-Resume.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute; (PDF)</a>
     </div>
   </div>
 </header>
 
-<section>
+<section id="projects">
+  <div class="wrap">
+    <h2>Selected Projects</h2>
+    <p class="section-note">
+      Four projects where I did the modeling, the code, or both. Two have public repositories
+      you can read end to end.
+    </p>
+
+    <article class="project">
+      <div class="project-top">
+        <h3>Transportation Network Optimization</h3>
+        <p class="meta">Ringpu Biology &middot; Summer 2026</p>
+      </div>
+      <p>
+        Ringpu runs a national shipment network for veterinary biologics. Its carrier contracts
+        price by lane and volume, so route choice and consolidation have to be solved together
+        rather than lane by lane.
+      </p>
+      <span class="label">What I built</span>
+      <ul>
+        <li>A path-based mixed-integer program on a time-expanded network, with path flow variables and piecewise linear performance pricing for carrier tiers.</li>
+        <li>A packaging should-cost model and total-cost-of-ownership comparison to test whether supplier price increases were justified against rubber market indices.</li>
+        <li>The scenario runs the team used during the logistics arm's consolidation, comparing network designs across demand and rate assumptions.</li>
+      </ul>
+      <ul class="stack">
+        <li>Python</li><li>AMPL</li><li>MILP</li><li>Time-expanded networks</li><li>TCO / should-cost</li>
+      </ul>
+      <div class="links"><span class="quiet">Code is proprietary to Ringpu; I can walk through the model on request.</span></div>
+    </article>
+
+    <article class="project">
+      <div class="project-top">
+        <h3>AI Financial Chatbot</h3>
+        <p class="meta">BCG GenAI Job Simulation &middot; Feb 2026</p>
+      </div>
+      <p>
+        A working chatbot that answers financial questions about Apple, Microsoft and Tesla
+        from their 10-K filings, built for the BCG GenAI simulation on Forage.
+      </p>
+      <span class="label">What I built</span>
+      <ul>
+        <li>Extracted and reconciled three years of revenue, net income, margin and leverage figures from the filings into a single queryable table.</li>
+        <li>A Flask app plus pandas analysis layer that resolves a question to the right metric, company and year, then answers in plain language.</li>
+        <li>A documented notebook covering the data work, shipped alongside the app and its templates.</li>
+      </ul>
+      <ul class="stack">
+        <li>Python</li><li>Flask</li><li>pandas</li><li>openpyxl</li>
+      </ul>
+      <div class="links">
+        <a href="https://github.com/FoxTailKitsune/bcg-financial-chatbot" target="_blank" rel="noopener">Code on GitHub &rarr;</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-top">
+        <h3>LifeOS: Personal Agent Toolkit</h3>
+        <p class="meta">Personal project &middot; 2025 to 2026</p>
+      </div>
+      <p>
+        A Python toolkit that runs a set of agents over my own documents and notes: converting
+        files, generating slide decks, and routing work between specialized workers.
+      </p>
+      <span class="label">What I built</span>
+      <ul>
+        <li>Document agents with a small tool surface (create, convert, list, view, modify, restore) so an agent can edit real files safely.</li>
+        <li>An HTML to DOCX pipeline that renders pages in a headless browser before conversion, so layout survives the trip.</li>
+        <li>A shared instruction and configuration layer that keeps every agent on the same conventions.</li>
+      </ul>
+      <ul class="stack">
+        <li>Python</li><li>Playwright</li><li>Agent tooling</li><li>Document automation</li>
+      </ul>
+      <div class="links">
+        <a href="https://github.com/FoxTailKitsune/lifeos" target="_blank" rel="noopener">Code on GitHub &rarr;</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-top">
+        <h3>Desktop Operations Dashboard</h3>
+        <p class="meta">Personal project &middot; 2026</p>
+      </div>
+      <p>
+        A calendar and task dashboard that sits directly on the Windows desktop instead of in a
+        browser tab, because a widget you have to open is a widget you stop using.
+      </p>
+      <span class="label">What I built</span>
+      <ul>
+        <li>A Tkinter and Win32 application that embeds its panels behind desktop icons and paints through a color-keyed layered window.</li>
+        <li>CalDAV sync with recurring-event expansion, drag to reschedule, and a task strip fed from a local cache.</li>
+        <li>A wallpaper-aware rendering pipeline so the glass panels blend with whatever background is in use, plus a watchdog that restarts the panels if they die.</li>
+      </ul>
+      <ul class="stack">
+        <li>Python</li><li>Tkinter</li><li>Win32 API</li><li>CalDAV</li><li>PIL</li>
+      </ul>
+      <div class="links"><span class="quiet">Private repository; a walkthrough is available on request.</span></div>
+    </article>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="when">Summer 2026</div>
+      <div>
+        <h3>Supply Chain Intern</h3>
+        <p class="org">Ringpu Biology &middot; China, hybrid</p>
+        <ul>
+          <li>Built the path-based MILP transportation model described above for a manufacturer of roughly 3,000 employees.</li>
+          <li>Ran packaging should-cost and total-cost-of-ownership analyses to test supplier price justifications against global and local rubber markets.</li>
+          <li>Worked in Chinese-language source material and meetings on a five-person cross-departmental team during the logistics arm's consolidation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">May 2025 to present</div>
+      <div>
+        <h3>Shift Supervisor</h3>
+        <p class="org">HEYTEA &middot; Edison, NJ</p>
+        <ul>
+          <li>Run opening and closing procedures, cash reconciliation and POS accuracy for a store serving more than 1,000 beverages a day.</li>
+          <li>Workflow changes cut customer wait time by 10 percent; inventory coordination with management cut material waste by 20 percent.</li>
+          <li>Supervise and train teams of five to ten during peak hours.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Summer 2024</div>
+      <div>
+        <h3>Assistant Auto Technician</h3>
+        <p class="org">Spartan Motor Auto Services &middot; Morristown, NJ</p>
+        <ul>
+          <li>Diagnosed and repaired 200 customer vehicles with the lead technician.</li>
+          <li>Documented hundreds of preliminary inspections to support accurate repair estimates.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Jan 2025 to present</div>
+      <div>
+        <h3>Small Group and Worship Team Leader</h3>
+        <p class="org">InterVarsity Christian Fellowship</p>
+        <ul>
+          <li>Lead a group of 20 peers weekly and coordinate logistics for 10 events a semester.</li>
+          <li>Manage scheduling, communication and equipment for a worship team of eight to ten.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
   <div class="wrap">
     <h2>Skills</h2>
-    <ul class="skills">
-      <li>Python</li>
-      <li>SQL / MySQL</li>
-      <li>R</li>
-      <li>Tableau</li>
-      <li>Power BI</li>
-      <li>Excel modeling</li>
-      <li>Linear &amp; mixed-integer optimization</li>
-      <li>Total cost of ownership</li>
-      <li>Should-cost analysis</li>
-      <li>Time series forecasting</li>
-      <li>JavaScript</li>
-      <li>Mandarin Chinese</li>
-    </ul>
+    <div class="skills">
+      <div>
+        <h3>Modeling and analysis</h3>
+        <p>Linear and mixed-integer optimization, time series forecasting, total cost of ownership, should-cost analysis, statistical methods, Excel modeling</p>
+      </div>
+      <div>
+        <h3>Tools</h3>
+        <p>Python (pandas, Flask, Tkinter), R, SQL and MySQL, Tableau, Power BI, JavaScript, AMPL</p>
+      </div>
+      <div>
+        <h3>Supply chain</h3>
+        <p>Network design, transportation and logistics, procurement and global sourcing, inventory and operations management</p>
+      </div>
+      <div>
+        <h3>Languages</h3>
+        <p>English (native), Mandarin Chinese (proficient)</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <h2>Projects</h2>
-
-    <article class="project">
-      <h3>Transportation Network Optimization — Ringpu Biology</h3>
-      <p class="meta">Supply Chain Intern · Summer 2026</p>
-      <p>
-        Redesigned the shipment network for a veterinary biologics manufacturer of
-        roughly 3,000 employees, using a path-based mixed-integer program on a
-        time-expanded network.
-      </p>
-      <ul>
-        <li>Modeled path-based flow variables with linear performance pricing to compare routing and carrier options.</li>
-        <li>Evaluated supplier price justifications through total-cost-of-ownership and should-cost analysis.</li>
-        <li>Worked cross-departmentally on a five-person team during the company's logistics-arm consolidation.</li>
-      </ul>
-    </article>
-
-    <article class="project">
-      <h3>AI Financial Chatbot — BCG GenAI Job Simulation</h3>
-      <p class="meta">Forage · February 2026</p>
-      <p>
-        Built a Python chatbot that answers financial questions from 10-K and 10-Q
-        filings, combining pandas data extraction with rule-based response logic.
-      </p>
-      <ul>
-        <li>Parsed and reconciled multi-period filing data into a queryable structure.</li>
-        <li>Returned plain-language answers grounded in the reported figures.</li>
-      </ul>
-      <p class="links"><a href="https://github.com/FoxTailKitsune" target="_blank" rel="noopener">Code on GitHub →</a></p>
-    </article>
-
-    <article class="project">
-      <h3>Store Operations Improvement — HEYTEA</h3>
-      <p class="meta">Shift Supervisor · May 2025 – Present</p>
-      <p>
-        Ran peak-hour operations for a store serving more than 1,000 beverages a day
-        and put two measured process changes in place.
-      </p>
-      <ul>
-        <li>Workflow changes cut customer wait time by 10%.</li>
-        <li>Inventory coordination with management reduced material waste by 20%.</li>
-        <li>Supervised and trained teams of 5–10 across opening and closing procedures.</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
+<section id="education">
+  <div class="wrap edu">
     <h2>Education</h2>
-    <p style="margin:0 0 6px;font-size:18px">Rutgers Business School — BS, Supply Chain Management and Business Analytics &amp; IT</p>
-    <p style="margin:0;color:var(--muted)">Expected May 2027 · GPA 3.4 · Dean's List, four semesters</p>
-    <p style="margin:12px 0 0;color:var(--muted)">
+    <h3>Rutgers Business School, New Brunswick</h3>
+    <p>BS, Supply Chain Management and Business Analytics &amp; IT &middot; Expected May 2027 &middot; GPA 3.4</p>
+    <p>Dean's List, four semesters (Fall 2024 through Spring 2026)</p>
+    <p class="course">
       Coursework: Supply Chain Analytics, Supply Chain Finance, Procurement and Global Sourcing,
-      Business Decision Analytics, Operations Management, Time Series Modeling, Optimization Modeling.
+      Business Decision Analytics, Operations Management, Statistical Methods, Business Data
+      Management, Project Management, Time Series Modeling, Optimization Modeling.
     </p>
   </div>
 </section>
 
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;width:100%;gap:16px;flex-wrap:wrap">
-    <span>© <span id="yr">2026</span> Joseph Wang</span>
-    <a href="mailto:joseph.wang4@rutgers.edu">joseph.wang4@rutgers.edu</a>
+    <span>&copy; <span id="yr">2026</span> Joseph Wang</span>
+    <span><a href="mailto:joseph.wang4@rutgers.edu">joseph.wang4@rutgers.edu</a> &middot; <a href="Joseph-Wang-Resume.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></span>
   </div>
 </footer>
 
